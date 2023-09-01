@@ -6,4 +6,10 @@
 
 	blender -P standalone_visualization_test.py -- var_output1/voxel_data/voxel_000000.json
 
+# Launch Qt Designer
 
+	designer
+
+# Convert GUI to Python script
+
+	pyuic5 -x Buiding_GAN_Visualizer.ui -o Buiding_GAN_Visualizer.py

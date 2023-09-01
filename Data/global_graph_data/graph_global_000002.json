@@ -1,1 +1,9 @@
-{"far": 1.7494, "global_node": [{"type": 0, "proportion": 0.133092486, "connection": [[0, 0, 0], [0, 0, 1], [3, 0, 0]], "new_proportion": 0.18172211945056915}, {"type": 1, "proportion": 0.150867052, "connection": [[0, 1, 0], [0, 1, 1], [1, 1, 0]], "new_proportion": 0.03803486004471779}, {"type": 2, "proportion": 0.001734104, "connection": [[0, 2, 0], [1, 2, 0], [2, 2, 0], [3, 2, 0]], "new_proportion": 0.216059148311615}, {"type": 3, "proportion": 0.005202312, "connection": [[0, 3, 0], [0, 3, 1], [1, 3, 0], [1, 3, 1], [2, 3, 0], [2, 3, 1], [3, 3, 0], [3, 3, 1]], "new_proportion": 0.08557844161987305}, {"type": 4, "proportion": 0.249205202, "connection": [[1, 4, 0], [2, 4, 0], [0, 4, 0], [0, 4, 1]], "new_proportion": 0.38351818919181824}, {"type": 5, "proportion": 0.459898844, "connection": [[3, 5, 0], [2, 5, 0], [1, 5, 0], [1, 5, 1]], "new_proportion": 0.09508716315031052}], "site_area": 1000, "new_far": 2.2535717487335205}
+{
+	"far": 1.7494, 
+	"global_node": [  
+					{"type": 0, "proportion": 0.133092486, "connection": [[0, 0, 0], [0, 0, 1], [3, 0, 0]], "new_proportion": 0.18172211945056915}, 
+					{"type": 1, "proportion": 0.150867052, "connection": [[0, 1, 0], [0, 1, 1], [1, 1, 0]], "new_proportion": 0.03803486004471779}, 
+					{"type": 2, "proportion": 0.001734104, "connection": [[0, 2, 0], [1, 2, 0], [2, 2, 0], [3, 2, 0]], "new_proportion": 0.216059148311615}, 
+					{"type": 3, "proportion": 0.005202312, "connection": [[0, 3, 0], [0, 3, 1], [1, 3, 0], [1, 3, 1], [2, 3, 0], [2, 3, 1], [3, 3, 0], [3, 3, 1]], "new_proportion": 0.08557844161987305}, 
+					{"type": 4, "proportion": 0.249205202, "connection": [[1, 4, 0], [2, 4, 0], [0, 4, 0], [0, 4, 1]], "new_proportion": 0.38351818919181824}, 
+					{"type": 5, "proportion": 0.459898844, "connection": [[3, 5, 0], [2, 5, 0], [1, 5, 0], [1, 5, 1]], "new_proportion": 0.09508716315031052}], "site_area": 1000, "new_far": 2.2535717487335205}

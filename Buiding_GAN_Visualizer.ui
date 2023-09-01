@@ -24,6 +24,9 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="far">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -31,6 +34,9 @@
       <width>113</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>1.7494</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -66,6 +72,9 @@
     </property>
    </widget>
    <widget class="QLineEdit" name="tpr">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -74,8 +83,14 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="text">
+     <string>13,15,0,0,24,45</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="site_x">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -83,6 +98,9 @@
       <width>113</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>50</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -118,6 +136,9 @@
     </property>
    </widget>
    <widget class="QLineEdit" name="site_y">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -125,6 +146,9 @@
       <width>113</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>50</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -152,6 +176,9 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
@@ -178,6 +205,9 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
@@ -203,6 +233,9 @@
       <width>113</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="label_9">
@@ -237,6 +270,19 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QLineEdit" name="x_intervals">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>350</y>
+      <width>113</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <widget class="QLineEdit" name="y_intervals">
     <property name="geometry">
      <rect>
@@ -246,15 +292,8 @@
       <height>23</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QLineEdit" name="x_intervals">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>350</y>
-      <width>113</width>
-      <height>23</height>
-     </rect>
+    <property name="text">
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="generate_btn">
@@ -280,7 +319,7 @@
      </rect>
     </property>
     <property name="text">
-     <string># of build. to generate</string>
+     <string>Number of buildings</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -294,6 +333,9 @@
       <width>113</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
@@ -433,87 +475,82 @@
     </property>
     <item>
      <property name="text">
-      <string>Generated_Building_01</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_02</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_03</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_04</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_05</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_06</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_07</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_08</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_09</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_10</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_0</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_0</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_0</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_0</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_0</string>
+      <string/>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Generated_Building_0</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Generated_Building_0</string>
+      <string/>
      </property>
     </item>
    </widget>

@@ -10,6 +10,20 @@ import bpy
 import bmesh
 import numpy as np
 
+import sys
+argv = sys.argv
+argv = argv[argv.index("--") + 1:]  # get all args after "--"
+
+# Save the argument values in a dictionary
+input_values = {}
+
+input_values["number_of_floors"] = int(argv[0])
+input_values["groud_floor_height"] = int(argv[1]) 
+input_values["floor_height"] = int(argv[2]) 
+input_values["x_intervals"] = [int(x) for x in argv[3].split(",")] 
+input_values["y_intervals"] = [int(x) for x in argv[4].split(",")]
+input_values["filename"] = argv[5]
+
 def add_cube(location, dimension, color, index, voxel_floor):
     # add a cube into the scene
     bpy.ops.mesh.primitive_cube_add(size=1, location=location, scale=dimension)
@@ -36,7 +50,6 @@ def create_floor_collections(number_of_floors):
         # Add collection to scene collection
         bpy.context.scene.collection.children.link(my_coll)
     
-
 def create_voxel_building():
     """
     Prepare data for visualization and add cubes to the scene
@@ -47,7 +60,7 @@ def create_voxel_building():
         "voxel_node": []
     }
 
-    number_of_floors = 4
+    number_of_floors = input_values["number_of_floors"] 
     create_floor_collections(number_of_floors)
     
     # Alpha: opacity of the color
@@ -94,20 +107,25 @@ def create_voxel_building():
 
     i = 0
     
+
     # Iterate over the values and create the voxel graph 
-    for dim_z in [7, 4, 4, 4]:
+    for floor in range(number_of_floors):
+        if floor == 0:
+            dim_z = input_values["groud_floor_height"]
+        else:
+            dim_z = input_values["floor_height"]
+
         pos_x = 0
         pos_y = 0
 
         x = 0
         y = 0
         
-        for dim_y in [3, 7, 3, 5, 4, 4, 4, 5, 7]:
+        for dim_y in input_values["y_intervals"]:
             pos_x = 0
-
             x = 0
                         
-            for dim_x in [3, 4, 7, 4, 4, 5, 7]:
+            for dim_x in input_values["x_intervals"]:
                 location = (pos_x+dim_x/2, pos_y+dim_y/2, pos_z+dim_z/2)                            
                 dimension = (dim_x, dim_y, dim_z)
                 
@@ -118,8 +136,8 @@ def create_voxel_building():
                                                     "location": [z, y, x], 
                                                     "type": -1, 
                                                     "type_id": 0, 
-                                                    "coordinate": [pos_x, pos_y, pos_z], 
-                                                    "dimension": [dim_x, dim_y, dim_z], 
+                                                    "coordinate": [pos_z, pos_y, pos_x], 
+                                                    "dimension": [dim_z, dim_y, dim_x], 
                                                     "weight": 0, 
                                                     "neighbors": []} 
                 )
@@ -127,7 +145,6 @@ def create_voxel_building():
                 pos_x += dim_x 
                 
                 i += 1
-                
                 x += 1
                 
             # Go to the next line/row of voxels
@@ -142,14 +159,13 @@ def create_voxel_building():
 
 def create_json(output_json):
     # Serializing json
-    json_object = json.dumps(output_json, indent=1)
+    json_object = json.dumps(output_json)
      
     # Writing to sample.json
-    file_path = "/home/maparia/Downloads/"
-    with open(file_path+"sample.json", "w") as outfile:
+    filename = input_values["filename"]
+    with open(file_path+filename, "w") as outfile:
         outfile.write(json_object)
             
-# From YouTube tutorial    
 def delete_all_objects():
     """Removing all of the objects from the scene and remove all collections"""
     # make sure that we are in object mode
@@ -161,12 +177,8 @@ def delete_all_objects():
 
     # delete all selected objects in the scene
     bpy.ops.object.delete()
-    
-    #for collection in bpy.context.scene.collection.children:
-    #    bpy.context.scene.collection.children.unlink(collection)
 
-
-def main():
+def main():    
     # delete all objects in the scene
     delete_all_objects()
 
