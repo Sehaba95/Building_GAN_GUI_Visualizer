@@ -185,17 +185,18 @@ def delete_all_objects():
 def get_path_to_mesh_data():
     # return pathlib.Path.home() / "Downloads" / "Building-GAN-Output-Visualisation" / "Data_Building_GAN" / "voxel_graph" / "voxel_000003.json"
     # Aubergenville generation using Building-GAN 
-    return pathlib.Path.home() / "Downloads" / "Building-GAN" / "inference" / "iccv2021" / "Aubergenville_with_two_diff_voxel_graphs" / "output" / "voxel_data" / "voxel_000002.json"
+    return pathlib.Path.home() / "Downloads" / "Building_GAN_GUI_Visualizer" / "Data" / "voxel_data" / "sample_2023_09_01_19_33_40.984822.json"
     
     # Aubergenville generation using Building-GAN 
     #return pathlib.Path.home() / "Downloads" / "Building-GAN" / "inference" / "iccv2021" / "Aubergenville_with_two_diff_voxel_graphs" / "output" / "voxel_data" / "voxel_000004.json"
 
 def load_data():
     # Static input filename 
-    # path_to_file = get_path_to_mesh_data()
+    path_to_file = get_path_to_mesh_data()
 
     # Get the filename from terminal 
-    path_to_file = argv[0]
+    
+    #path_to_file = argv[0]
 
     # @todo: it is best to test that the file exists on disk before doing this
     # open the json file for reading and read the text from it

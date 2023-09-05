@@ -163,7 +163,7 @@ def create_json(output_json):
      
     # Writing to sample.json
     filename = input_values["filename"]
-    with open(file_path+filename, "w") as outfile:
+    with open(filename, "w") as outfile:
         outfile.write(json_object)
             
 def delete_all_objects():
