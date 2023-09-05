@@ -7,12 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>1052</width>
-    <height>565</height>
+    <height>590</height>
    </rect>
   </property>
   <property name="font">
    <font>
-    <weight>50</weight>
     <bold>false</bold>
    </font>
   </property>
@@ -177,7 +176,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>4</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -206,7 +205,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>7</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
@@ -235,7 +234,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>4</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_9">
@@ -280,7 +279,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>3,3,7,4,7,5</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="y_intervals">
@@ -293,20 +292,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="generate_btn">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>480</y>
-      <width>261</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Generate</string>
+     <string>4,4,7,4,7,7</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_11">
@@ -335,7 +321,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>10</string>
     </property>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
@@ -353,7 +339,6 @@
        <property name="font">
         <font>
          <pointsize>12</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -373,7 +358,6 @@
        <property name="font">
         <font>
          <pointsize>12</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -390,7 +374,6 @@
        <property name="font">
         <font>
          <pointsize>12</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -427,7 +410,7 @@
     <property name="geometry">
      <rect>
       <x>780</x>
-      <y>480</y>
+      <y>500</y>
       <width>261</width>
       <height>23</height>
      </rect>
@@ -442,12 +425,11 @@
       <x>780</x>
       <y>71</y>
       <width>261</width>
-      <height>371</height>
+      <height>411</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -554,6 +536,32 @@
      </property>
     </item>
    </widget>
+   <widget class="QPushButton" name="generate_btn">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>500</y>
+      <width>261</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Generate</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="is_visualise_voxel_graph">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>470</y>
+      <width>261</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>   Visualise Voxel Graph</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -561,7 +569,7 @@
      <x>0</x>
      <y>0</y>
      <width>1052</width>
-     <height>20</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
