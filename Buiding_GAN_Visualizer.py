@@ -154,11 +154,18 @@ class Ui_BuildingGAN(object):
         font.setBold(True)
         self.output_list.setFont(font)
         self.output_list.setAutoFillBackground(False)
-        self.output_list.setStyleSheet("QListWidget::item {\n"
-                                        "    border-bottom: 1px solid #000000; \n"
-                                        "    margin-top:3px;\n"
-                                        "    margin-bottom:3px;\n"
-                                        "}")
+        self.output_list.setStyleSheet("""QListWidget::item {
+                                                border-bottom: 1px solid #000000; 
+                                                padding-top:3px;
+                                                padding-bottom:3px;
+                                        }
+                                        QListWidget::item:selected {
+                                                background: #0336FF;
+                                        }
+                                        QListWidget QWidget[widgetItem=true] {
+                                                background: transparent;
+                                        }
+                                        """)
         self.output_list.setTabKeyNavigation(False)
         self.output_list.setDragEnabled(False)
         self.output_list.setAlternatingRowColors(True)
@@ -342,14 +349,15 @@ class Ui_BuildingGAN(object):
         # TODO: Run inference
 
         # TODO: Update the List in the GUI with results
-
+        self.output_list.clear()
+        for i in range(self.input_values["number_of_buildings"]):
+            self.output_list.addItem("Building_{}".format(i+1))
 
     # Add an event to Visualize button
     def visualize_btn_clicked(self):
         # TODO: Get the filename of the selected value and the path
         selected_item = self.output_list.currentItem()
         # Get the value of the selected item
-        # str(selected_item.text())
         selected_item.setText("Selected Item")
 
         # TODO: Run Blender using the filename as argument
@@ -363,3 +371,11 @@ if __name__ == "__main__":
     ui.setupUi(BuildingGAN)
     BuildingGAN.show()
     sys.exit(app.exec_())
+
+
+
+
+
+
+
+
