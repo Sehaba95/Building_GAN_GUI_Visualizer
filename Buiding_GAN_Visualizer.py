@@ -355,7 +355,7 @@ class Ui_BuildingGAN(object):
 
     # Add an event to Visualize button
     def visualize_btn_clicked(self):
-        # TODO: Get the filename of the selected value and the path
+        # Get the filename of the selected value and the path
         selected_item = self.output_list.currentItem()
         # Get the value of the selected item
         selected_item.setText("Selected Item")
