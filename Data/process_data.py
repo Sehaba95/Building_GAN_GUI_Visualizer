@@ -6,25 +6,23 @@ raw_data
     - voxel_data
 
 """
+
+import sys
+sys.path.insert(0,'/home/maparia/Documents/Building-GAN')
+
+
 import torch
-from Data.GraphConstructor import  GraphConstructor
+from GraphConstructor import GraphConstructor
 import os
+import glob
 
-raw_data_dir = "6types-raw_data"
-output_dir = "6types-processed_data"
-global_graph_dir = os.path.join(raw_data_dir, "global_graph_data")
-local_graph_dir = os.path.join(raw_data_dir, "local_graph_data")
-voxel_graph_dir = os.path.join(raw_data_dir, "voxel_data")
+import sys
+argv = sys.argv
+voxel_graph_filename = argv[1]
+output_fname = argv[2]
 
+g = GraphConstructor.load_graph_jsons(voxel_graph_filename)
 
-for fname in os.listdir(global_graph_dir):
-    data_id = int(''.join(filter(str.isdigit, fname)))
-    try:
-        g = GraphConstructor.load_graph_jsons(data_id, raw_data_dir)
-        output_fname = "data" + str(data_id).zfill(GraphConstructor.data_id_length) + ".pt"
-        torch.save(g, os.path.join(output_dir, output_fname))
-    except:
-        print("Error loading data " + str(data_id).zfill(GraphConstructor.data_id_length))
+torch.save(g, output_fname)
 
 print("Data processing completed")
-

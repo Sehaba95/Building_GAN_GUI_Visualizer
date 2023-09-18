@@ -11,7 +11,10 @@ def make_args():
     parser.add_argument('--cuda', dest='cuda', default='0', type=str)  # -1 if not using GPU
     parser.add_argument('--comment', dest='comment', default='0', type=str, help='comment')
 
-    # Data related
+    parser.add_argument('--input_object', default='Data/6types-processed_data/data000000.pt', type=str, help='Preprocessed input')
+    parser.add_argument('--output_dir', default='Data/outputs/', type=str, help='Output directory')
+
+   # Data related
     parser.add_argument('--batch_size', default=8, type=int, help='size of graph batching')
     # add_bool_argument(parser, "--if_curriculum", "--if_curriculum_no", dest_var="if_curriculum", help_str="if use curriculum")
     parser.add_argument('--train_data_dir', default='Data/6types-processed_data', type=str, help='where to load the training data if not preload')

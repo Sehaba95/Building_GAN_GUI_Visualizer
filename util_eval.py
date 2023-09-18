@@ -36,7 +36,7 @@ def save_output(batch_size, batch, class_weights, program_weights, FAR, max_out_
         cw, pw, far = cw.cpu().data.numpy(), pw.cpu().data.numpy(), far.item()
 
         # Modify Global data
-        with open(os.path.join(raw_dir, "global_graph_data", GraphConstructor.global_graph_prefix + data_id_str + ".json")) as f:
+        with open(os.path.join(raw_dir, "global_graph_data", "graph_global_000000.json")) as f:
             global_graph = json.load(f)
         global_graph["new_far"] = far
         for n in global_graph["global_node"]:
@@ -46,7 +46,7 @@ def save_output(batch_size, batch, class_weights, program_weights, FAR, max_out_
 
         # Modify Local data
         d = {}  # program id to its type and type id
-        with open(os.path.join(raw_dir, "local_graph_data", GraphConstructor.local_graph_prefix + data_id_str + ".json")) as f:
+        with open(os.path.join(raw_dir, "local_graph_data", "graph_local_000000.json")) as f:
             local_graph = json.load(f)
         for i, (n, c) in enumerate(zip(local_graph["node"], pw)):
             n["region_far"] = float(c)
@@ -55,7 +55,7 @@ def save_output(batch_size, batch, class_weights, program_weights, FAR, max_out_
             json.dump(local_graph, f)
 
         # Modify Voxel data
-        with open(os.path.join(raw_dir, "voxel_data", GraphConstructor.voxel_graph_prefix + data_id_str + ".json")) as f:
+        with open(os.path.join(raw_dir, "voxel_data", "voxel_000000.json")) as f:
             voxel_graph = json.load(f)
         for n, label, _pid in zip(voxel_graph["voxel_node"], o, pid):
             query = d[_pid.item() - num_of_program_node_accum]

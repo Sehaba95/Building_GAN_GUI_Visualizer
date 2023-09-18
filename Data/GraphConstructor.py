@@ -27,14 +27,16 @@ class GraphConstructor:
         return [1 if i == _id else 0 for i in range(GraphConstructor.number_of_class)]
 
     @staticmethod
-    def load_graph_jsons(data_id, data_dir):
-        data_id_str = str(data_id).zfill(GraphConstructor.data_id_length)
-        with open(os.path.join(data_dir, "global_graph_data", GraphConstructor.global_graph_prefix + data_id_str+".json")) as f:
+    def load_graph_jsons(voxel_graph_filename):
+        # data_id_str = str(data_id).zfill(GraphConstructor.data_id_length)
+        data_id_str = voxel_graph_filename.split(".")[0].replace("sample","")
+        
+        with open("Data/6types-raw_data/global_graph_data/graph_global_000000.json") as f:
             global_graph = json.load(f)  # Keys: FAR, site area, Global node (Room Type, target_ratio, connections)
-        with open(os.path.join(data_dir, "local_graph_data", GraphConstructor.local_graph_prefix + data_id_str+".json")) as f:
+        with open("Data/6types-raw_data/local_graph_data/graph_local_000000.json") as f:
             local_graph = json.load(f)
-        with open(os.path.join(data_dir, "voxel_data", GraphConstructor.voxel_graph_prefix + data_id_str+".json")) as f:
-            raw_voxel_graph = json.load(f)
+        with open(voxel_graph_filename) as f:
+                raw_voxel_graph = json.load(f)
 
         program_graph = GraphConstructor.construct_program_graph(local_graph, global_graph)
         voxel_graph = GraphConstructor.construct_voxel_graph(raw_voxel_graph)
