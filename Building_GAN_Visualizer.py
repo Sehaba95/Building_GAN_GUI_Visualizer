@@ -413,20 +413,22 @@ class Ui_BuildingGAN(object):
 
     # Add an event to Visualize button
     def visualize_btn_clicked(self):
-    
-        # Get the path to the output folder
-        #inference_output_folder = "output" + self.input_values["processed_data_filename"].split("/")[-1].split(".")[0].replace("data","")
-        #inference_output_path = "Data/outputs/" + inference_output_folder + "/voxel_data/"
+        try:    
+            # Get the path to the output folder
+            #inference_output_folder = "output" + self.input_values["processed_data_filename"].split("/")[-1].split(".")[0].replace("data","")
+            #inference_output_path = "Data/outputs/" + inference_output_folder + "/voxel_data/"
 
-        # Get the filename of the selected value and the path
-        selected_item = self.output_list.currentItem().text()
+            # Get the filename of the selected value and the path
+            selected_item = self.output_list.currentItem().text()
 
-        #filename = inference_output_path + selected_item.text()
+            #filename = inference_output_path + selected_item.text()
 
-        filename = self.output_hospitals[selected_item]
+            filename = self.output_hospitals[selected_item]
 
-        # Run Blender using the filename as argument
-        subprocess.run(["blender", "-P", "standalone_output_visualization.py", "--", filename]) 
+            # Run Blender using the filename as argument
+            subprocess.run(["blender", "-P", "standalone_output_visualization.py", "--", filename]) 
+        except:
+            pass
 
 if __name__ == "__main__":
     import sys
