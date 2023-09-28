@@ -22,7 +22,7 @@
 
 # Convert GUI to Python script
 
-	pyuic5 -x Building_GAN_Visualizer.ui -o Building_GAN_Visualizer.py
+	pyuic5 -x Building_GAN_Visualizer.ui -o Building_GAN_Visualizer_NEW.py
 
 
 # Launch the visualizer
